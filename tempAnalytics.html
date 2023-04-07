@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="author" content="Obiorah Ebuka Bryan">
+    <meta name="description" content="This is an Analytics Website based on my learning Experience">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="icon" href="img/bee-logo.png" type="image/x-icon">
+    <title>Analytics Website:: A Project by Bryan</title>
+    <script src="https://kit.fontawesome.com/c4dc7d69bd.js" crossorigin="anonymous"></script>
+<style>
+* {
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+    color: black;
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url(font/Raleway-Regular.ttf);
+}
+
+body {
+    margin: 0;
+    background-color: #f1f1f1;
+}
+
+div.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    line-height: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.menu {
+    line-height: 50px;
+    margin: 14px 15px 14px 25px;
+    color: #3671d2;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+div.logo {
+    display: flex;
+    color: #3671d2;
+    cursor: default;
+}
+
+div.logo > div img {
+    margin: 14px 15px 14px 10px;
+}
+
+div.logo > div h2{
+    margin-right: 30px;
+    color: #3671d2;
+    margin: 20px 30px 14px 0px;
+}
+
+/*The Welcome Bryan Part starts here*/
+.sidenav {
+    display: none;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+div.row-dash {
+    display: flex;
+    flex-direction: column;
+}
+div.col-1 {
+    display: flex;
+    width: 300px;
+    height: 116px;
+    background-color: white;
+    flex-wrap: wrap;
+    position: fixed;
+    z-index: 1;
+    top: 50px;
+    left: 0;
+    overflow-x: hidden;
+}
+
+div.user {
+    margin: 20px 0 0 20px;
+    width: 50px;
+    height: 50px;
+    background-image: url('img/02Photo500by500px.jpg');
+    background-size: contain;
+    border-radius: 50%;
+}
+
+div.welcome {
+    margin-left: 30px;
+    margin-top: 20px;
+    color: black;
+}
+
+div.icons {
+    display: flex;
+    justify-content: space-between;
+}
+
+div.icons > div {
+    padding: 10px;
+}
+
+div.icons > div:hover {
+    background-color: #cccccc;
+}
+
+/*The Dashboard List & Overview Section*/
+div.dash {
+    display: flex;
+    width: 300px;
+    height: 500px;
+    flex-direction: column;
+    position: fixed;
+    z-index: 1;
+    background-color: white;
+    top: 168px;
+    left: 0;
+    overflow-y: hidden;
+    padding-top: 25px;
+}
+
+div.dash p {
+    font-size: 20px;
+}
+
+div.dash > div {
+    width: 300px;
+    padding: 10px 20px;
+}
+
+
+div.dash > div:hover {
+    background-color: #cccccc;
+    width: 300px;
+    height: auto;
+    cursor: pointer;
+}
+
+div.overview {
+    background-color: #2196f3;
+}
+
+div.dash > div a {
+    text-decoration: none;
+    color: black;
+}
+
+
+/*The body part*/
+.body-part {
+    width: 75%;
+    margin-left: 300px;
+    margin-top: 50px;
+    padding-bottom: 40px;
+}
+
+@media only screen and (max-width: 993px){
+
+    .body-part {
+        margin-left: 0;
+        width: 100%;
+        transition: 0.6s;
+    }
+
+    div.row-dash {
+        display: none;
+    }
+}
+
+div.gauge {
+    display: flex;
+}
+
+div.board-main {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-right: 15px;
+}
+
+div.board-main > div {
+    width: 100%;
+    padding: 10px 20px;
+    line-height: 50px;
+    margin: 10px 0px 0 15px;
+    color: white;
+}
+
+.com-fif {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media only screen and (max-width: 600px){
+    div.board-main, .row {
+        flex-wrap: wrap;
+    }
+}
+
+.fa-gauge {
+    margin: 40px 0 3px 20px;
+}
+
+.row {
+    display: flex;
+}
+
+
+.column-3 {
+    width: 95%;
+    margin-right: 15px;
+}
+
+.column-6 {
+    width: 95%;
+    margin: 0 15px 0 15px;
+}
+
+.region-img {
+    margin-right: 15px;
+}
+
+#feeds-table {
+    margin: 15px 15px 0 0;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#feeds-table td {
+    padding: 12px;
+}
+
+#feeds-table tr:nth-child(odd) {
+    background-color: white;
+}
+
+.row::after {
+    display: table;
+    clear: both;
+    content: "";
+}
+
+h5 {
+    font-size: 20px;
+    margin: 30px 0 15px 15px;
+}
+
+div.stats {
+    margin: 15px;
+}
+
+div.con {
+    background-color: #9e9e9e;
+    width: 100%;
+}
+
+div.twe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4caf50;
+    height: 50px;
+    width: 25%;
+}
+div.con2 {
+    background-color: #9e9e9e;
+    width: 100%;
+}
+
+div.fif {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4caf50;
+    height: 50px;
+    width: 50%;
+}
+div.con3 {
+    background-color: #9e9e9e;
+    width: 100%;
+}
+
+div.svn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f44336;
+    height: 50px;
+    width: 75%;
+}
+
+div.space {
+    width: 97%;
+    margin: 15px 15px 40px 15px;
+}
+
+.con-table {
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 97%;
+    border-collapse: collapse;
+    border: 1px solid #cccccc;
+    cursor: crosshair;
+}
+
+.con-table td {
+    padding: 12px;
+}
+
+.con-table tr:nth-child(odd) {
+    background-color: white;
+}
+
+.con-table tr:hover {
+    background-color: #cccccc;
+}
+
+div.more {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+    padding: 12px;
+    background-color: #616161;
+    width: 170px;
+    color: white;
+}
+
+div.more:hover {
+    background-color: #cccccc;
+    color: black;
+    cursor: pointer;
+}
+
+div.arrow {
+    position: absolute;
+}
+
+.re-users {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    margin-left: 15px;
+    margin-top: 1px;
+    padding: 15px;
+    background-color: white;
+    width: 97%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media only screen and (max-width: 600px) {
+    div.space, .con-table, .re-users {
+        width: 94%;
+    }    
+}
+
+div.mike {
+    width: 40px;
+    height: 40px;
+    background-image: url('img/bube.jpg');
+    background-size: contain;
+    border-radius: 50%;
+}
+
+div.bubu {
+    width: 40px;
+    height: 40px;
+    background-image: url('img/bubu.jpg');
+    background-size: contain;
+    border-radius: 50%;
+}
+
+div.bryan {
+    width: 40px;
+    height: 40px;
+    background-image: url('img/Bryan.JPG');
+    background-size: contain;
+    border-radius: 50%;
+}
+
+div.com-text {
+    margin: 40px 0 15px 15px;
+    font-size: 20px;
+}
+
+div.mike-usr {
+    width: 100px;
+    height: 100px;
+    background-image: url(img/bube.jpg);
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    background-size: contain;
+    border-radius: 100%;
+}
+div.bubu-usr {
+    width: 100px;
+    height: 100px;
+    background-image: url(img/bubu.jpg);
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    background-size: contain;
+    border-radius: 100%;
+}
+
+div.com-usr {
+    display: flex;
+    margin-left: 15px;
+    margin-right: 15px;
+    align-items: center;
+}
+
+div.mike-text {
+    display: flex;
+    margin-left: 60px;
+}
+
+div.mike-para {
+    padding-left: 60px;
+}
+
+div.dst {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #616161;
+    color: white;
+    padding: 30px;
+    margin-top: 50px;
+    width: 100%;
+}
+
+div.demo > div, .sys > div, .tee > div{
+    padding: 15px 15px 4px 0px;
+    width: 250px;
+    color: white;
+}
+
+.bord01 {
+    font-size: 20px;
+    border-bottom: 5px solid #4caf50;
+    width: 250px;
+}
+
+.bord02 {
+    font-size: 20px;
+    border-bottom: 5px solid #f44336;
+    width: 250px;
+}
+
+.bord03 {
+    font-size: 20px;
+    border-bottom: 5px solid #ff9800;
+    width: 250px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0 px;
+    margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 993px) {
+    .menu {
+        display: none;
+    }
+}
+</style>
+</head>
+<header>
+    <div id="mySidenav" class="sidenav">
+        <div class="col-1">
+            <div class="user"></div>
+            <div class="welcome">
+                Welcome, <strong>Bryan</strong>
+                <div class="icons">
+                    <div><i class="fa-solid fa-user"></i></div>
+                    <div><i class="fa-solid fa-envelope"></i></div>
+                    <div><i class="fa-solid fa-gear"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="dash">
+            <span style="font-size: 20px; padding: 10px 20px; cursor: default;">
+            Dashboard
+            </span>
+            <div onclick="closeNav()" class="close">
+                <i class="fa-solid fa-square-xmark"></i>&nbsp;&nbsp;&nbsp; 
+                <a href="javascript:void(0)" class="closebtn" >Close Menu</a>
+            </div>
+            <div class="overview">
+                <i class="fa-solid fa-users"></i>&nbsp;&nbsp;
+                <a href="#">Overview</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-eye"></i>&nbsp;&nbsp;
+                <a href="#">Views</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-users"></i>&nbsp;&nbsp;
+                <a href="#">Traffic</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="#">Geo</a>
+            </div>
+            <div>
+                <i class="fa-regular fa-gem"></i>&nbsp;&nbsp;&nbsp;
+                <a href="#">Orders</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-bell"></i>
+                &nbsp;&nbsp;
+                <a href="#">News</a>
+            </div>
+            <div>
+                <i class="fa-sharp fa-solid fa-building-columns"></i>&nbsp;&nbsp;&nbsp;
+                <a href="#">General</a>
+            </div>
+            <div>
+                <i class="fa-sharp fa-solid fa-clock-rotate-left"></i>&nbsp;&nbsp;&nbsp;
+                <a href="#">History</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-gear"></i>
+                &nbsp;&nbsp;
+                <a href="#">Settings</a>
+            </div>
+        </div>
+    </div>
+    <div class="header">
+        <div><span onclick="openNav()" class="menu">&#9776;&nbsp;Menu 
+        </span></div>
+        <div class="logo">
+            <div><img src="img/bee-logo1.png" alt="Logo" width="20px"></div>
+            <div><h2>Analytica</h2></div>
+        </div>
+    </div>
+</header>
+<body>
+    <main>
+        <div class="row-dash">
+            <div class="col-1">
+                <div class="user"></div>
+                    <div class="welcome">
+                        Welcome, <strong>Bryan</strong>
+                        <div class="icons">
+                            <div><i class="fa-solid fa-user"></i></div>
+                            
+                            <div>
+                            <i class="fa-solid fa-envelope"></i></div>
+
+                            <div><i class="fa-solid fa-gear"></i></div>
+                        </div>
+                    </div>
+            </div>
+                
+            <div class="dash">
+                <span style="font-size: 20px; padding: 10px 20px; cursor: default;">
+                Dashboard
+                </span>
+                <div class="overview">
+                    <i class="fa-solid fa-users"></i>&nbsp;&nbsp;
+                    <a href="#">Overview</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-eye"></i>&nbsp;&nbsp;
+                    <a href="#">Views</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-users"></i>&nbsp;&nbsp;
+                    <a href="#">Traffic</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="#">Geo</a>
+                </div>
+                <div>
+                    <i class="fa-regular fa-gem"></i>&nbsp;&nbsp;&nbsp;
+                    <a href="#">Orders</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-bell"></i>
+                    &nbsp;&nbsp;
+                    <a href="#">News</a>
+                </div>
+                <div>
+                    <i class="fa-sharp fa-solid fa-building-columns"></i>&nbsp;&nbsp;&nbsp;
+                    <a href="#">General</a>
+                </div>
+                <div>
+                    <i class="fa-sharp fa-solid fa-clock-rotate-left"></i>&nbsp;&nbsp;&nbsp;
+                    <a href="#">History</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-gear"></i>
+                    &nbsp;&nbsp;
+                    <a href="#">Settings</a>
+                </div>
+            </div>
+        </div>
+        <script>
+            function openNav() {
+                    document.getElementById("mySidenav").style.display = "flex";
+                }
+
+            function closeNav() {
+                    document.getElementById("mySidenav").style.display = "none";
+            }
+        </script>
+        <section class="body-part">
+            <div>
+                <div class="gauge">
+                    <i class="fa-solid fa-gauge"></i>
+                    <div style="font-size: 20px; font-weight: bold; margin: 36px 0 3px 5px;">My Dashboard</div>
+                </div>
+                <div class="board-main">
+                    <div style="background-color: #f44336; margin-left: 15px;">
+                        <div class="com-fif">
+                            <div><i class="fa-solid fa-comment" style="font-size: 50px; color: white;"></i></div>
+                            <div style="font-size: 20px; color: white;">52</div>
+                        </div>
+                        <div style="color: white;">Message</div>
+                    </div>
+                    <div style="background-color: #2196f3;">
+                        <div class="com-fif">
+                            <div><i class="fa-solid fa-eye" style="font-size: 50px; color: white;"></i></div>
+                            <div style="font-size: 20px; color: white;">99</div>
+                        </div>
+                    Views</div>
+                    <div style="background-color: #009688;">
+                        <div class="com-fif">
+                            <div><i class="fa-sharp fa-solid fa-share-from-square" style="font-size: 50px;color: white;"></i></div>
+                            <div style="font-size: 20px; color: white;">23</div>
+                        </div>
+                    Shares</div>
+                    <div style="background-color: #ff9800;">
+                        <div class="com-fif">
+                            <div><i class="fa-solid fa-users" style="font-size: 50px; color: white;"></i></div>
+                            <div style="font-size: 20px; color: white;">50</div>
+                        </div>
+                    Users</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column-3">
+                    <div style="margin: 15px 15px 0 15px; font-size: 20px;">Region</div>
+                    <div class="region-img">
+                        <img src="img/region.jpg" alt="image" width="100%" height="auto" style="margin: 15px 0 0 15px;">
+                    </div>
+                </div>
+                <div class="column-6">
+                    <div style="margin: 15px 15px 0 0; font-size: 20px;">Feeds</div>
+                        <table id="feeds-table">
+                            <tr>
+                                <td><i class="fa fa-user w3-text-blue w3-large" style="color: #2196f3;"></i></td>
+                                <td>New record, over 90 views.</td>
+                                <td><i>10 mins</i></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-bell w3-text-red w3-large" style="color: #f44336;"></i></td>
+                                <td>Database error.</td>
+                                <td><i>15 mins</i></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-users w3-text-yellow w3-large" style="color: #d2be0e;"></i></td>
+                                <td>New record, over 40 users.</td>
+                                <td><i>17 mins</i></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-comment w3-text-red w3-large" style="color: #f44336;"></i></td>
+                                <td>New comments.</td>
+                                <td><i>25 mins</i></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-bookmark w3-text-blue w3-large" style="color: #2196f3;"></i></td>
+                                <td>Check transactions.</td>
+                                <td><i>28 mins</i></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-laptop w3-text-red w3-large" style="color: #f44336;"></i></td>
+                                <td>CPU overload.</td>
+                                <td><i>35 mins</i></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-share-alt w3-text-green w3-large" style="color: #4caf50;"></i></td>
+                                <td>New shares.</td>
+                                <td><i>39 mins</i></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h5>General Stats</h5>
+                <div class="space">
+                    <div style="padding: 15px 0;">New Visitors</div>
+                    <div class="con">
+                        <div class="twe">25%</div>
+                    </div>
+                    
+                    <div style="padding: 15px 0;">New Users</div>
+                    <div class="con2">
+                        <div class="fif">50%</div>
+                    </div>
+                
+                    <div style="padding: 15px 0;">Bounce Rate</div>
+                    <div class="con3">
+                        <div class="svn">75%</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h5>Countries</h5>
+                <table class="con-table">
+                    <tr>
+                        <td>United States</td>
+                        <td>65%</td>
+                    </tr>
+                    <tr>
+                        <td>UK</td>
+                        <td>15.7%</td>
+                    </tr>
+                    <tr>
+                        <td>Russia</td>
+                        <td>5.6%</td>
+                    </tr>
+                    <tr>
+                        <td>Spain</td>
+                        <td>2.1%</td>
+                    </tr>
+                    <tr>
+                        <td>India</td>
+                        <td>1.9%</td>
+                    </tr>
+                    <tr>
+                        <td>France</td>
+                        <td>1.5%</td>
+                    </tr>
+                </table>
+                <div class="more">
+                <div style="color: white;">More Countries&nbsp;&nbsp;<i class="fa-solid fa-arrow-right" style="color: white;"></i></div>
+                </div>
+            </div>
+            <div>
+                <h5>Recent Users</h5>
+                <div class="re-users">
+                    <div class="mike"></div> 
+                    &nbsp; Mike
+                </div>
+                <div class="re-users">
+                    <div class="bubu"></div> 
+                    &nbsp; Bubu
+                </div>
+                <div class="re-users">
+                    <div class="bryan"></div> 
+                    &nbsp; Bryan
+                </div>
+            </div>
+            <div>
+                <div class="com-text">Recent Comments</div>
+                <div class="com-usr">
+                    <div class="mike-usr"></div>
+                    <div>
+                        <div class="mike-text">
+                        <span><strong>Mike</strong></span>&nbsp;<span style="color: #818181;">Jan 10, 2023, 05:12PM</span>
+                        </div>
+                        <div class="mike-para">
+                            <p>This is a really awesome project.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="com-usr" style="margin-top: 40px;">
+                    <div class="bubu-usr"></div>
+                    <div>
+                        <div class="mike-text">
+                        <span><strong>Bubu</strong></span>&nbsp;<span style="color: #818181;">Jan 10, 2023, 09:12PM</span>
+                        </div>
+                        <div class="mike-para">
+                            <p>Great project.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dst">
+                <div class="demo">
+                    <div class="bord01">Demographic</div>
+                    <div>Language</div>
+                    <div>Country</div>
+                    <div>City</div>
+                </div>
+                <div class="sys">
+                    <div class="bord02">System</div>
+                    <div>Browser</div>
+                    <div>OS</div>
+                    <div>More</div>
+                </div>
+                <div class="tee">
+                    <div class="bord03">Target</div>
+                    <div>Users</div>
+                    <div>Active</div>
+                    <div>Geo</div>
+                    <div>Interests</div>
+                </div>
+            </div>
+        </div>
+        </section>
+    </main>
+</body>
+<footer class="footer">
+    <a href="./">Powered by Bryan Tech</a>
+</footer>
+</html>
