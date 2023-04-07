@@ -679,4 +679,9 @@ div.hid-logos {
         border-radius: 0 0 20px 20px;
         height: 580px;
     }
+
+    @keyframes myfirst {
+        0%   {right: 0px; top: 0px;}
+        100% {right: 1950px; top: 0px;}
+    }
 }
