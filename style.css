@@ -336,6 +336,90 @@ div.mid-logos > div {
     width: 100px;
 }
 
+/*Portfolio section*/
+
+div.port-sec {
+    text-align: center;
+    padding: 160px 180px 100px 180px;
+    width: 100%;
+    height: 1000px;
+    background-color: #f0ece6;
+    z-index: -2;
+
+}
+
+div.portfolio {
+    color: #252525;
+    font-size: 60px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    height: 50px;
+    padding-bottom: 80px;
+}
+
+div.portfolio::before {
+    content: '';
+    height: 0.5px;
+    width: 200px;
+    background-color: #252525;
+    margin-right: 20px;
+}
+
+div.portfolio::after {
+    content: '';
+    height: 0.5px;
+    width: 200px;
+    background-color: #252525;
+    margin-left: 20px;
+}
+
+div.port-sec > div > p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #645d5f;
+    padding-bottom: 70px;
+}
+
+/*portfolio images*/
+
+div.port-img {
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    background-color: #252525;
+}
+
+div.port-img::-webkit-scrollbar {
+    display: none; /* hide the scrollbar in Chrome and Safari */
+}
+
+
+div.port-img > div {
+    position: relative;
+    padding: 20px;
+    animation: myfirst 15s infinite;
+    animation-direction: alternate;
+}
+
+div.port-img:hover {
+    cursor: pointer;
+    animation-play-state: paused;
+}
+
+@keyframes myfirst {
+    0%   {right: 0px; top: 0px;}
+    100% {right: 1200px; top: 0px;}
+}
+
+div.port-img > div > img {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); 
+}
+
+
 /*button section*/
 .button {
     --color: #252525;
@@ -405,11 +489,11 @@ div.hid-logos {
 
 /*media queries section*/
 @media only screen and (max-width: 1044px) {
-    .mid-navs, .nav-icons {
+    .mid-navs, .nav-icons, div.main-img > img {
         display: none;
     }
 
-    .burger {
+    .burger, div.main-sub-img {
         display: block;
     }
 
@@ -427,19 +511,23 @@ div.hid-logos {
     div.main-txt p {
         font-size: 35px;
     }
-
-    div.main-img > img {
-        display: none;
-    }
-
-    div.main-sub-img {
-        display: block;
-    }
-
+    
     div.mid-sec {
         height: 1250px;
     }
 
+    div.port-sec {
+        padding: 150px 180px 100px 180px;
+        height: 1100px;
+    }
+
+    div.portfolio {
+        font-size: 40px;
+    }
+
+    div.portfolio::before, div.portfolio::after {
+        width: 100px;
+    }
 }
 
 @media only screen and (max-width: 830px) {
@@ -473,11 +561,24 @@ div.hid-logos {
         height: 1250px;
         padding: 180px 50px 300px 50px;
     }
+
+    div.port-sec {
+        padding: 150px 50px 100px 50px;
+        height: 1200px;
+    }
 }
 
 @media only screen and (max-width: 601px) {
     div.mid-sec {
-        height: 1100px;
+        height: 800px;
+    }
+
+    div.about-me, div.portfolio {
+        font-size: 25px;
+    }
+
+    div.portfolio {
+        padding-bottom: 40px;
     }
 
     div.mid-logos {
@@ -490,6 +591,10 @@ div.hid-logos {
         align-items: center;
         overflow: scroll hidden;
         width: 100%;
+    }
+
+    div.hid-logos::-webkit-scrollbar {
+        display: none; /* hide the scrollbar in Chrome and Safari */
     }
 
     div.hid-logos > div {
@@ -518,6 +623,15 @@ div.hid-logos {
     .show-hide  {
         display: block;
     }
+
+    div.port-sec {
+        padding: 130px 50px 50px 50px;
+    }
+
+    div.portfolio::before, div.portfolio::after {
+        width: 80px;
+    }
+
 }
 
 @media only screen and (max-width: 441px) {
@@ -529,12 +643,21 @@ div.hid-logos {
         margin-left: 20px;
     }
 
+    div.portfolio::before, div.portfolio::after {
+        width: 50px;
+    }
+
     div.mid-sec {
         height: 850px;
     }
 
     div.main-sub-img {
         height: 150px;
+    }
+
+    div.portfolio {
+        font-size: 20px;
+        padding-bottom: 40px;
     }
 }
 
