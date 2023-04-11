@@ -37,7 +37,7 @@ div.nav {
     align-items: center;
     text-align: center;
     position: fixed;
-    z-index: 2;
+    z-index: 3;
 }
 
 .mid-navs {
@@ -164,25 +164,28 @@ div.nav {
 }
 
 div.nav-fall {
-    position: fixed;
-    margin-top: 75px;
-    font-size: 20px;
     width: 100%;
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+    height: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    transition: 0.5s;
+    z-index: 2;
 }
 
 div.fall-com {
+    position: relative;
+    top: 14%;
+    width: 100%;
+    text-align: center;
+    line-height: 2.3;
+    font-size: 20px;
     background-color: rgb(38, 38, 38);
-    border-bottom: 1px solid #3e3e3e;
-    transition: .5s ease;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: .5s ease;
+    border-bottom:1px solid #3c3c3c;
 }
 
 div.fall-com::before {

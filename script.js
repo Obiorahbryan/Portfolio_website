@@ -1,9 +1,15 @@
 const burger = document.querySelector('#burger');
 const menu = document.querySelector('.nav-fall');
+const content = document.querySelector('.fall-com');
 
 
 burger.addEventListener('click', () => {
-    menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    menu.style.height = menu.style.height === '100%' ? '0' : '100%';
+});
+
+content.addEventListener('click', () => {
+    menu.style.height = menu.style.height === '100%' ? '0' : '100%';
+    burger.checked = false;
 });
 
 /*Click to hide here*/
