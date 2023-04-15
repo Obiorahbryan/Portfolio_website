@@ -422,6 +422,47 @@ div.port-img > div > img {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); 
 }
 
+/*Portfolio catalogues*/
+div.catalog {
+    height: 600px;
+    background-color: #f0ece6;
+}
+
+div.catalog h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+div.cat-block {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+div.cat-box {
+    background-color: #252525;
+    width: 300px;
+    height: 149px;
+    margin: 20px 20px;
+    overflow: hidden;
+}
+
+div.work {
+    text-align: center;
+}
+
+div.work p {
+    position: relative;
+    top: -19px;
+    background-color: #3e3e3e;
+    margin: 20px 20px;
+    padding: 10px ;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+}
 
 /*button section*/
 .button {
@@ -549,6 +590,7 @@ div.hid-logos {
     div.portfolio::before, div.portfolio::after {
         width: 100px;
     }
+
 }
 
 @media only screen and (max-width: 830px) {
@@ -587,6 +629,12 @@ div.hid-logos {
         padding: 150px 50px 100px 50px;
         height: 1200px;
     }
+}
+
+@media only screen and (max-width: 682px) {
+    div.catalog {
+        height: 1200px;
+    }    
 }
 
 @media only screen and (max-width: 601px) {
